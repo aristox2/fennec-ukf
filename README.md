@@ -1,4 +1,4 @@
-# Fennec UKF
+# fennec ukf
 
 ## what the filter is looking at 
 
