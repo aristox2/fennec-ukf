@@ -1,0 +1,49 @@
+{
+  "filter": "scaled unscented Kalman filter",
+  "state": [
+    "height_m",
+    "vertical_velocity_mps",
+    "vertical_acceleration_mps2"
+  ],
+  "measurement_channels": [
+    "TeleMetrum raw pressure",
+    "EasyMini raw pressure",
+    "TeleMetrum ascent acceleration"
+  ],
+  "easymini_time_offset_s": 0.9849999999999999,
+  "easymini_height_bias_removed_m": 91.42000000000007,
+  "alignment_method": "robust joint time/height offset fit over T+25\u201345 s, expressed on the TeleMetrum clock and height datum",
+  "posterior_apogee_m": 10581.395777193917,
+  "posterior_apogee_time_s": 48.650000000000006,
+  "posterior_peak_velocity_mps": 496.93488088046206,
+  "posterior_peak_velocity_time_s": 13.200000000000001,
+  "configuration": {
+    "alpha": 0.3,
+    "beta": 2.0,
+    "kappa": 0.0,
+    "pressure_sigma_pa": 250.0,
+    "transonic_pressure_sigma_pa": 1200.0,
+    "deployment_pressure_sigma_pa": 800.0,
+    "acceleration_sigma_mps2": 14.0,
+    "gate_nis": 10.83,
+    "output_step_s": 0.05
+  },
+  "update_counts": {
+    "pressure_accepted": {
+      "telemetrum": 9099,
+      "easymini": 8011
+    },
+    "pressure_rejected": {
+      "telemetrum": 3,
+      "easymini": 152
+    },
+    "acceleration_accepted": 4798,
+    "acceleration_rejected": 33
+  },
+  "limitations": [
+    "The two recorder clocks do not contain a verified shared timecode.",
+    "The separate custom-payload IMU stream is not present in the supplied flight files.",
+    "Reported posterior covariance depends on configurable process and measurement noise; it is not an independently calibrated confidence interval.",
+    "No independent tracking truth was available to calculate trajectory error."
+  ]
+}
